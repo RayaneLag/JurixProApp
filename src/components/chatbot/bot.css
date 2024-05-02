@@ -1,0 +1,86 @@
+.chatbot {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 2rem auto 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style pour les messages du chatbot */
+.chat-messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #003366;
+  color: white;
+}
+
+/* Style pour l'input et le bouton d'envoi du chatbot */
+.chat-input {
+  display: flex;
+  padding: 10px 0;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 437px; /* Vous pouvez ajuster la largeur si nécessaire */
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.chat-input button:hover {
+  opacity: 0.8;
+}
+
+.animate-message {
+  opacity: 0;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

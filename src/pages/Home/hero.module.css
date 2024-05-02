@@ -1,0 +1,95 @@
+.hero {
+  color: #00457c;
+  text-align: center;
+  padding: 50px 50px;
+  width: 50%;
+}
+
+.beta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+  z-index: 1;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.discordapp.net/attachments/1185997423701676053/1233129628877455410/BANNER-19-1024x309_1.png?ex=662bf8f5&is=662aa775&hm=4b55ed1a05a6ff9b71e2f28e78047eb20e3b77cd7e4d92ab09f26ab27dc0a389&=&format=webp&quality=lossless&width=1408&height=424");
+  background-size: cover;
+  z-index: -10;
+  filter: blur(5px);
+}
+.sigma {
+  width: 50%;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.freeTrialButton {
+  background-color: #00457c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.freeTrialButton:hover {
+  background-color: #002744;
+}
+
+/* section  */
+
+.testimonialsSection {
+  background-color: #00457c;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonialsTitle {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.testimonialsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.testimonialPhoto {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonialPhoto:hover {
+  transform: translateY(-10px);
+}

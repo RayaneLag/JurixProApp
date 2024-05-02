@@ -1,0 +1,85 @@
+.loginPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4; /* A light background to contrast the form */
+}
+
+.formContainer {
+  flex-basis: 50%;
+  max-width: 400px;
+  padding: 2rem;
+  margin-right: 2rem;
+  background: #ffffff; /* White background for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners for the form container */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.formContainer:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+}
+
+.imageContainer {
+  flex-basis: 50%;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd; /* Lighter border color */
+  border-radius: 4px;
+  font-size: 1rem; /* Larger font size for readability */
+  transition: border-color 0.3s; /* Transition for input focus */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #0055b3; /* Highlight color when input is focused */
+  outline: none; /* Removing the default focus outline */
+}
+
+button.loginButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0055b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Matching font size with inputs */
+  font-weight: bold; /* Making the button text bold */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding shadow to button */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transition for button states */
+}
+
+button.loginButton:hover {
+  background-color: #003366;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover for the button */
+}
+
+.socialLogin {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem; /* Added margin for spacing between button and social logins */
+}
+
+.socialButton {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s; /* Transition for social buttons hover */
+}
+
+.socialButton:hover {
+  opacity: 0.7; /* Opacity change on hover for social buttons */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for the image */
+}
