@@ -1,85 +1,114 @@
+/* log.module.css */
 .loginPageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f4f4f4; /* A light background to contrast the form */
-}
-
-.formContainer {
-  flex-basis: 50%;
-  max-width: 400px;
-  padding: 2rem;
-  margin-right: 2rem;
-  background: #ffffff; /* White background for the form */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Rounded corners for the form container */
-  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-.formContainer:hover {
-  transform: translateY(-10px); /* Slight lift effect on hover */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .imageContainer {
-  flex-basis: 50%;
+  position: relative;
+  overflow: hidden;
 }
 
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd; /* Lighter border color */
-  border-radius: 4px;
-  font-size: 1rem; /* Larger font size for readability */
-  transition: border-color 0.3s; /* Transition for input focus */
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #0055b3; /* Highlight color when input is focused */
-  outline: none; /* Removing the default focus outline */
-}
-
-button.loginButton {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #0055b3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem; /* Matching font size with inputs */
-  font-weight: bold; /* Making the button text bold */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding shadow to button */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Transition for button states */
-}
-
-button.loginButton:hover {
-  background-color: #003366;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover for the button */
-}
-
-.socialLogin {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem; /* Added margin for spacing between button and social logins */
-}
-
-.socialButton {
-  padding: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.3s; /* Transition for social buttons hover */
-}
-
-.socialButton:hover {
-  opacity: 0.7; /* Opacity change on hover for social buttons */
+.imageContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
 }
 
 img {
   width: 100%;
-  height: auto;
-  border-radius: 8px; /* Rounded corners for the image */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+.inputField {
+  width: 80%;
+  padding: 0.8rem;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.inputField:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.25);
+}
+
+button.loginButton {
+  width: 80%;
+  padding: 0.8rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button.loginButton:hover {
+  background-color: #5a67d8;
+}
+
+.formHeader {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  background: -webkit-linear-gradient(45deg, #6a82fb, #fc5c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 5s ease infinite;
+}
+
+/* Keyframes for the color shift animation */
+@keyframes colorShift {
+  0%,
+  100% {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);
+  }
 }

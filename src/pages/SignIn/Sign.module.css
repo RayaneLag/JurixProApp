@@ -7,24 +7,25 @@
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   overflow: hidden;
 }
 
-.backgroundImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://i.pinimg.com/564x/67/92/52/6792523ccbe15ecaffb29deb55186fa6.jpg");
-  background-size: cover;
-  background-position: center;
-  filter: blur(8px);
-  z-index: -1;
+.TextGen {
+  color: var(--mauve-11);
+  font-size: 20px;
+  line-height: 1.4;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 350px;
+  height: 350px;
 }
 
 button,
@@ -33,132 +34,132 @@ input {
   all: unset;
 }
 
+.illustration{
+  height: 300px;
+}
+
+
+/* Tabs container */
 .TabsRoot {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  box-shadow: 0 2px 10px var(--black-a4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
 }
 
+/* Tabs navigation */
 .TabsList {
   flex-shrink: 0;
   display: flex;
-  border-bottom: 1px solid var(--mauve-6);
+  border-bottom: 2px solid #e9ecef;
 }
 
 .TabsTrigger {
-  font-family: inherit;
-  background-color: white;
-  padding: 0 20px;
-  height: 45px;
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--mauve-11);
-  user-select: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 .TabsTrigger:first-child {
-  border-top-left-radius: 6px;
+  border-top-left-radius: 8px;
 }
 .TabsTrigger:last-child {
-  border-top-right-radius: 6px;
+  border-top-right-radius: 8px;
 }
-.TabsTrigger:hover {
-  color: var(--violet-11);
-}
+.TabsTrigger:hover,
 .TabsTrigger[data-state="active"] {
-  color: var(--violet-11);
-  box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
-}
-.TabsTrigger:focus {
-  position: relative;
-  box-shadow: 0 0 0 2px black;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
 }
 
 .TabsContent {
   flex-grow: 1;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  outline: none;
-}
-.TabsContent:focus {
-  box-shadow: 0 0 0 2px black;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
+/* Form elements */
 .Text {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: var(--mauve-11);
-  font-size: 15px;
-  line-height: 1.5;
+  margin-bottom: 24px;
+  color: #343a40;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .Fieldset {
-  margin-bottom: 15px;
-  width: 100%;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .Label {
-  font-size: 13px;
-  line-height: 1;
-  margin-bottom: 10px;
-  color: var(--violet-12);
-  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
 }
 
 .Input {
-  flex: 1 0 auto;
-  border-radius: 4px;
-  padding: 0 10px;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--violet-11);
-  box-shadow: 0 0 0 1px var(--violet-7);
-  height: 35px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #495057;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .Input:focus {
-  box-shadow: 0 0 0 2px var(--violet-8);
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
+/* Button styling */
 .Button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  padding: 0 15px;
   font-size: 15px;
-  line-height: 1;
   font-weight: 500;
-  height: 35px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 .Button.green {
-  background-color: var(--green-4);
-  color: var(--green-11);
+  background-color: #28a745;
+  color: white;
 }
 .Button.green:hover {
-  background-color: var(--green-5);
+  background-color: #218838;
 }
 .Button.green:focus {
-  box-shadow: 0 0 0 2px var(--green-7);
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
 }
 
+/* Error message */
+.error {
+  color: #e3342f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
   .formContainer {
-    width: 90%;
+    width: 100%;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
-}
-
-.error {
-  color: #d8000c;
-  margin-bottom: 15px;
 }

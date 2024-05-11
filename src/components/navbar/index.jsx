@@ -17,7 +17,7 @@ const Nav = () => {
           className={classes.logo}
           onClick={() => Navigate("/")}
         />
-        <p className="text-black">JurixPro</p>
+        <p>JurixPro</p>
       </div>
       <div className={classes.navItems}>
         {NavItems.map((item, i) => {
