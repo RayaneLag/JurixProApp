@@ -5,20 +5,26 @@ import classes from "./Sign.module.css";
 import { useSignInMutation } from "../../app/Slices/apislice";
 import * as Tabs from "@radix-ui/react-tabs";
 import { TextGenerateEffect } from "../../components/TextGen";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../app/Slices/UserSlice";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
     age: "",
     email: "",
     name: "",
-    Lastname: "",
     password: "",
+    job: "",
   });
   const [emailError, setEmailError] = useState("");
-  const [mutate, { isLoading }] = useSignInMutation();
+  const [mutate, { isLoading, isError }] = useSignInMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({ ...formData, [name]: value });
   };
 
@@ -28,15 +34,19 @@ const SignIn = () => {
       setEmailError('Adresse e-mail invalide. Un "@" est requis.');
     } else {
       setEmailError("");
-      console.log(formData);
     }
-    await mutate({
+    const response = await mutate({
       email: formData.email,
       password: formData.password,
       name: formData.name,
-      surname: formData.surname,
-      age: formData.age,
+      Job: formData.job,
+      age: parseInt(formData.age),
     });
+    console.log(response);
+    dispatch(setUser(response.data.newUser));
+    if (!isError) {
+      navigate("/dashbord");
+    }
   };
 
   return (
@@ -76,31 +86,58 @@ const SignIn = () => {
                 <label className={classes.Label} htmlFor="name">
                   Name
                 </label>
-                <input className={classes.Input} id="name" />
+                <input
+                  className={classes.Input}
+                  id="name"
+                  name="name"
+                  onChange={(e) => handleInputChange(e)}
+                />
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="username">
                   Email
                 </label>
-                <input className={classes.Input} id="username" />
+                <input
+                  className={classes.Input}
+                  id="email"
+                  name="email"
+                  onChange={(e) => handleInputChange(e)}
+                />
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="password">
                   Password
                 </label>
-                <input className={classes.Input} id="password" />
+                <input
+                  className={classes.Input}
+                  id="password"
+                  name="password"
+                  onChange={(e) => handleInputChange(e)}
+                />
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="age">
                   Age
                 </label>
-                <input className={classes.Input} id="age" type="number" />
+                <input
+                  className={classes.Input}
+                  id="age"
+                  type="number"
+                  name="age"
+                  onChange={(e) => handleInputChange(e)}
+                />
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="job">
                   Job
                 </label>
-                <input className={classes.Input} id="job" type="text" />
+                <input
+                  className={classes.Input}
+                  id="job"
+                  type="text"
+                  name="job"
+                  onChange={(e) => handleInputChange(e)}
+                />
               </fieldset>
               <div
                 style={{
@@ -109,7 +146,12 @@ const SignIn = () => {
                   justifyContent: "flex-end",
                 }}
               >
-                <button className={`${classes.Button} ${classes.green}`}>
+                <button
+                  className={`${classes.Button} ${classes.green}`}
+                  type="submit"
+                  disabled={isLoading}
+                  onClick={handleSubmit}
+                >
                   Save changes
                 </button>
               </div>

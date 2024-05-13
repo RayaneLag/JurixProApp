@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import classes from "./Log.module.css";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useLoginMutation } from "../../app/Slices/apislice";
+import { setUser } from "../../app/Slices/UserSlice";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [mutate, { isLoading, isError }] = useLoginMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
+    const response = await mutate({ password, email });
+    console.log(response);
+    dispatch(setUser(response.data.user));
+    if (!isError) {
+      navigate("/dashbord");
+    }
   };
 
   return (

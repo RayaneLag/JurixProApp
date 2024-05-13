@@ -2,7 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const userslice = createSlice({
   name: "user",
-  initialState: JSON.parse(localStorage.getItem("user")),
+  initialState: {
+    Username: "Guest",
+    age: 20,
+    email: "laggounrayan00@gmail.com",
+    password: 12345,
+    job: "avocat",
+  },
   reducers: {
     setUser: (state, action) => {
       console.log("hello");

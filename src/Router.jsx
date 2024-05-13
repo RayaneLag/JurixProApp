@@ -7,18 +7,26 @@ import SignIn from "./pages/SignIn";
 import LogIn from "./pages/Login";
 import Avis from "./pages/AVIS";
 import ContactPage from "./pages/Contacts";
+import Dashboard from "./pages/Dashbord";
+
+import Sidebar from "./components/SideBar";
 
 function Router() {
   return (
     <>
-      <Nav />
       <Routes>
+        <Route path="/" element={<Nav />}>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/avis" element={<Avis />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+        <Route path="/" element={<Sidebar />}>
+          <Route path="/dashbord" element={<Dashboard />} />
+          {/* <Route path="/Chatweb" element={<ChatWeb />} /> */}
+        </Route>
         <Route path="*" element={<Error404 />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/avis" element={<Avis />} />
-        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </>
   );
