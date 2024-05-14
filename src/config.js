@@ -58,16 +58,18 @@ export const NavItems = [
     href: "/Avis",
     expand: false,
   },
-  {
+  !isauth && {
     title: "Login",
     href: "/LogIn",
     expand: false,
   },
-
-  {
+  !isauth && {
     title: "SignIn",
-    href: "/SignIn", 
-    expand: false, 
-    button: true, 
+    href: "/SignIn",
+    expand: false,
+    button: true,
+  },
+  isauth && {
+    title: "User",
   },
 ];

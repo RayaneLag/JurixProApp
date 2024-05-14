@@ -1,0 +1,91 @@
+/* Base container styles for the todo application */
+.TodoWrapper {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100vw; /* Ensures full viewport width */
+  padding: 20px;
+  margin: 0;
+  background-color: #283046; /* Soft dark blue, replacing black */
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form styles for adding new todos */
+.TodoForm {
+  width: 90%; /* Responsive width within padding */
+  display: flex;
+  gap: 10px;
+  margin: 0 auto 20px auto; /* Centered with bottom margin */
+}
+
+/* Input and button shared styles */
+.todo-input,
+.todo-btn {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #3a4250; /* Lighter border color */
+  border-radius: 5px;
+  outline: none;
+  color: #ccd6f6; /* Light grey text for visibility */
+  background-color: #2c3545; /* Lighter than wrapper for contrast */
+}
+
+.todo-input {
+  flex-grow: 2; /* Larger flex-grow for input */
+}
+
+/* Input focus and button hover effects */
+.todo-input:focus,
+.todo-btn:focus {
+  box-shadow: 0 0 8px rgba(130, 170, 255, 1); /* Soft blue glow for focus */
+}
+
+.todo-btn {
+  background-color: #495867; /* Subdued blue for button */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.todo-btn:hover {
+  background-color: #374354; /* Even lighter blue on hover */
+  transform: scale(1.03);
+}
+
+/* Styles for individual todo items */
+.Todo {
+  width: 90%; /* Slightly narrower for padding effect */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2c3545; /* Matching the button background */
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px auto; /* Centered with vertical margin */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Todo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for completed tasks and icons */
+.completed {
+  text-decoration: line-through;
+  color: #687288; /* Soft blue for muted text */
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 18px; /* Suitable size for interactive icons */
+}
+
+.edit-icon {
+  color: #ffc107; /* Yellow color for edit */
+}
+
+.delete-icon {
+  color: #d9534f; /* Red color for delete */
+}

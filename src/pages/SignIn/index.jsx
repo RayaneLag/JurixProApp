@@ -6,7 +6,7 @@ import { useSignInMutation } from "../../app/Slices/apislice";
 import * as Tabs from "@radix-ui/react-tabs";
 import { TextGenerateEffect } from "../../components/TextGen";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../app/Slices/UserSlice";
+import { login } from "../../app/Slices/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
@@ -43,7 +43,7 @@ const SignIn = () => {
       age: parseInt(formData.age),
     });
     console.log(response);
-    dispatch(setUser(response.data.newUser));
+    dispatch(login(response.data.newUser));
     if (!isError) {
       navigate("/dashbord");
     }

@@ -3,7 +3,7 @@ import classes from "./Log.module.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../app/Slices/apislice";
-import { setUser } from "../../app/Slices/UserSlice";
+import { login } from "../../app/Slices/UserSlice";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +17,7 @@ const LogIn = () => {
     console.log(email, password);
     const response = await mutate({ password, email });
     console.log(response);
-    dispatch(setUser(response.data.user));
+    dispatch(login(response.data.user));
     if (!isError) {
       navigate("/dashbord");
     }
