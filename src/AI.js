@@ -20,7 +20,9 @@ async function run() {
 
   const safetySettings = [];
 
-  const parts = [{ text: "input: " }];
+  const parts = [
+    { text: "input: j ai un probleme avec mon employeur il veut me renvoyer " },
+  ];
 
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./index.css";
-import TodoApp from "../../components/Todo";
+import { useAiMutation } from "../../app/Slices/apislice";
 
 const ChatWeb = () => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(true);
+
+  const [mutate] = useAiMutation();
 
   const suggestions = [
     "Quels sont mes droits en tant que locataire ?",
@@ -13,20 +15,23 @@ const ChatWeb = () => {
     "Quelles sont les étapes pour déposer un brevet ?",
   ];
 
-  const handleSendMessage = (text) => {
+  const handleSendMessage = async (text) => {
     if (!text && userInput.trim() === "") return;
     const newMessage = text || userInput;
 
-    setMessages([...messages, { from: "user", text: newMessage }]);
+    setMessages([...messages, { role: "user", text: newMessage }]);
     setUserInput("");
     setShowSuggestions(false);
+    console.log(messages, "this is message");
+    const res = await mutate({
+      input: messages,
+    });
+    console.log(res, "response");
 
-    setTimeout(() => {
-      setMessages((m) => [
-        ...m,
-        { from: "bot", text: "Réponse simulée du chatbot à votre question." },
-      ]);
-    }, 1000);
+    // setTimeout(() => {
+    //   setMessages((m) => [...m, { role: "bot", text: data }]);
+    //   console.log(Input);
+    // }, 1000);
   };
 
   const handleSuggestionClick = (suggestion) => {
@@ -38,7 +43,7 @@ const ChatWeb = () => {
       <div className="chatweb-container">
         <div className="chatweb-body">
           {messages.map((msg, index) => (
-            <div key={index} className={`chatweb-message ${msg.from}`}>
+            <div key={index} className={`chatweb-message ${msg.role}`}>
               {msg.text}
             </div>
           ))}

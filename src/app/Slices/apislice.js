@@ -11,6 +11,14 @@ export const apiSlice = createApi({
         body: data,
       }),
     }),
+    ai: builder.mutation({
+      query: (data) => ({
+        url: "/ai",
+        method: "post",
+        body: data,
+      }),
+    }),
+
     login: builder.mutation({
       query: (data) => ({
         url: "user/login",
@@ -21,4 +29,9 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useSignInMutation, useLoginMutation } = apiSlice;
+export const {
+  useSignInMutation,
+  useLoginMutation,
+  useAiMutation,
+  useResAiQuery,
+} = apiSlice;
