@@ -24,12 +24,12 @@ function Router() {
           <Route path="/avis" element={<Avis />} />
           <Route path="/contact" element={<ContactPage />} />
         </Route>
-        <Route path="/" element={<Sidebar />}>
+        {/* <Route path="/" element={<Sidebar />}>
           <Route path="/dashbord" element={<Dashboard />} />
           <Route path="/Chatweb" element={<ChatWeb />} />
           <Route path="/Wrapper" element={<Wrapper />} />
-        </Route>
-        <Route path="*" element={<Error404 />} />
+        </Route> */}
+        {/* <Route path="*" element={<Error404 />} /> */}
       </Routes>
     </>
   );
