@@ -18,18 +18,18 @@ function Router() {
       <Routes>
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/avis" element={<Avis />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="home" element={<Home />} />
+          <Route path="login" element={<LogIn />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="avis" element={<Avis />} />
+          <Route path="contact" element={<ContactPage />} />
         </Route>
-        {/* <Route path="/" element={<Sidebar />}>
-          <Route path="/dashbord" element={<Dashboard />} />
-          <Route path="/Chatweb" element={<ChatWeb />} />
-          <Route path="/Wrapper" element={<Wrapper />} />
-        </Route> */}
-        {/* <Route path="*" element={<Error404 />} /> */}
+        <Route path="/" element={<Sidebar />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="chatweb" element={<ChatWeb />} />
+          <Route path="wrapper" element={<Wrapper />} />
+        </Route>
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </>
   );
