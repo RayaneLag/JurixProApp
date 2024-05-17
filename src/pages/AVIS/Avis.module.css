@@ -150,6 +150,14 @@ h2 {
   }
 }
 
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
 .avisTitle {
   text-align: center;
   color: #333333;

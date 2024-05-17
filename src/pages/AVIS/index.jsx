@@ -54,68 +54,80 @@ const Avis = () => {
   };
 
   return (
-    <div className={classes.avisContainer}>
-      <h2 className={classes.avisTitle}>Avis</h2>
-      {reviews.map((review) => (
-        <div key={review.id} className={classes.review}>
-          <p>
-            <strong>{review.user}</strong> ({review.rating} stars)
-          </p>
-          <p>{review.comment}</p>
-        </div>
-      ))}
-      <form onSubmit={addReview} className={classes.reviewForm}>
-        <input type="text" name="user" placeholder="Your name" required />
-
-        <textarea name="comment" placeholder="Your review" required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
-      <div className={classes.starRating}>
-        {[...Array(5)].map((star, index) => {
-          const ratingValue = index + 1;
-
-          return (
-            <label key={index}>
-              <input
-                type="radio"
-                name="rating"
-                value={ratingValue}
-                onClick={() => setRating(ratingValue)}
-              />
-              <FaStar
-                className={classes.star}
-                color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
-                size={30}
-                onMouseEnter={() => setHover(ratingValue)}
-                onMouseLeave={() => setHover(0)}
-              />
-            </label>
-          );
-        })}
-      </div>
-      <div className={classes.faqContainer}>
-        {faqs.map((faq, index) => (
-          <div key={index} className={classes.faqItem}>
-            <button
-              className={classes.faqQuestion}
-              onClick={() => toggleFAQ(index)}
-            >
-              {faq.question}
-              <span>{activeFAQIndex === index ? "-" : "+"}</span>
-            </button>
-            <div
-              className={
-                activeFAQIndex === index
-                  ? classes.faqAnswerOpen
-                  : classes.faqAnswerClosed
-              }
-            >
-              {faq.answer}
-            </div>
+    <>
+      <div className={classes.avisContainer}>
+        <h2 className={classes.avisTitle}>Avis</h2>
+        {reviews.map((review) => (
+          <div key={review.id} className={classes.review}>
+            <p>
+              <strong>{review.user}</strong> ({review.rating} stars)
+            </p>
+            <p>{review.comment}</p>
           </div>
         ))}
+        <form onSubmit={addReview} className={classes.reviewForm}>
+          <input type="text" name="user" placeholder="Your name" required />
+
+          <textarea
+            name="comment"
+            placeholder="Your review"
+            required
+          ></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+        <div className={classes.starRating}>
+          {[...Array(5)].map((star, index) => {
+            const ratingValue = index + 1;
+
+            return (
+              <label key={index}>
+                <input
+                  type="radio"
+                  name="rating"
+                  value={ratingValue}
+                  onClick={() => setRating(ratingValue)}
+                />
+                <FaStar
+                  className={classes.star}
+                  color={
+                    ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                  }
+                  size={30}
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setHover(0)}
+                />
+              </label>
+            );
+          })}
+        </div>
+        <div className={classes.faqContainer}>
+          {faqs.map((faq, index) => (
+            <div key={index} className={classes.faqItem}>
+              <button
+                className={classes.faqQuestion}
+                onClick={() => toggleFAQ(index)}
+              >
+                {faq.question}
+                <span>{activeFAQIndex === index ? "-" : "+"}</span>
+              </button>
+              <div
+                className={
+                  activeFAQIndex === index
+                    ? classes.faqAnswerOpen
+                    : classes.faqAnswerClosed
+                }
+              >
+                {faq.answer}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      <footer className={classes.footer}>
+        <p>&copy; 2024 JurixPro. All Rights Reserved.</p>
+        <div className={classes.footerLinks}></div>
+      </footer>
+    </>
   );
 };
 

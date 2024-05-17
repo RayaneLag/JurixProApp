@@ -64,7 +64,7 @@ const Nav = () => {
     // 4
     {
       title: "Fonctionnalités",
-      href: "/Fonctionnalités",
+      href: "/FonctionnalitePage",
       expand: false,
     },
 

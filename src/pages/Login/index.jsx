@@ -27,7 +27,7 @@ const LogIn = () => {
     <div className={classes.loginPageContainer}>
       <div className={classes.imageContainer}>
         <img
-          src="https://source.unsplash.com/random/1024x768?office"
+          src="https://i.pinimg.com/564x/22/83/6f/22836f61faee0ff0d5c9046b117448e8.jpg"
           alt="Stylish office"
         />
       </div>

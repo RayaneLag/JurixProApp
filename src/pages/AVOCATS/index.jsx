@@ -12,7 +12,11 @@ const CabinetAvocat = () => {
       </header>
 
       <section className={styles.aboutSection}>
-        <h2 className={styles.sectionTitle}>À Propos de Nous</h2>
+        <img
+          className={styles.logo}
+          src="/logo_jurixPro-removebg-preview.png"
+          alt="Logo"
+        />
         <p className={styles.sectionDescription}>
           JurixPro est une legal tech innovante qui utilise l'intelligence
           artificielle pour optimiser les services juridiques en Algérie. Nos
@@ -41,30 +45,6 @@ const CabinetAvocat = () => {
           <div className={styles.serviceCard}>
             <h3>Analyse de Contrats</h3>
             <p>Analysez et vérifiez vos contrats en un clin d'œil.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.teamSection}>
-        <h2 className={styles.sectionTitle}>Notre Équipe</h2>
-        <div className={styles.teamCards}>
-          <div className={styles.teamCard}>
-            <img
-              src="https://www.franck-cohen-avocat.fr/sites/default/files/styles/master_into_sidebar/public/articles/avocat_penaliste_cropee.jpg?itok=5vYgWuta"
-              alt="Avocat 1"
-              className={styles.teamPhoto}
-            />
-            <h3> Maitre Ahmed Ben Ali</h3>
-            <p>Avocat spécialisé en droit des affaires</p>
-          </div>
-          <div className={styles.teamCard}>
-            <img
-              src="https://demarchesadministratives.fr/images/demarches/2327/consulter-gratuitement-avocat.jpg"
-              alt="Avocat 2"
-              className={styles.teamPhoto}
-            />
-            <h3>maitre Fatima Boudiaf</h3>
-            <p>Avocate spécialisée en droit pénal</p>
           </div>
         </div>
       </section>

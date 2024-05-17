@@ -1,0 +1,98 @@
+.container {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(to right, #1e90ff, #00bfff);
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 50px 0;
+}
+
+.featureCard {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.featureCard img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.featureCard h3 {
+  margin: 15px 0;
+}
+
+.featureCard p {
+  color: #666;
+}
+
+.featureCard:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .featureCard {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
