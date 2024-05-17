@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import classes from "./Avis.module.css";
+import { FaStar } from "react-icons/fa";
 
 const Avis = () => {
   const [reviews, setReviews] = useState([
     {
       id: 1,
-      user: "Alice",
+      user: "Omar",
       rating: 5,
       comment: "Excellent service, very satisfied!",
     },
     {
       id: 2,
-      user: "Bob",
+      user: "Ahmed",
       rating: 4,
       comment: "Good service, but could be faster.",
     },
@@ -35,6 +36,8 @@ const Avis = () => {
   ]);
 
   const [activeFAQIndex, setActiveFAQIndex] = useState(null);
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
 
   const toggleFAQ = (index) => {
     setActiveFAQIndex(activeFAQIndex === index ? null : index);
@@ -44,15 +47,15 @@ const Avis = () => {
     e.preventDefault();
     const user = e.target.user.value;
     const comment = e.target.comment.value;
-    const rating = parseInt(e.target.rating.value);
     const newReview = { id: reviews.length + 1, user, rating, comment };
     setReviews([...reviews, newReview]);
     e.target.reset();
+    setRating(0);
   };
 
   return (
     <div className={classes.avisContainer}>
-      <h2>Avis</h2>
+      <h2 className={classes.avisTitle}>Avis</h2>
       {reviews.map((review) => (
         <div key={review.id} className={classes.review}>
           <p>
@@ -63,17 +66,33 @@ const Avis = () => {
       ))}
       <form onSubmit={addReview} className={classes.reviewForm}>
         <input type="text" name="user" placeholder="Your name" required />
-        <input
-          type="number"
-          name="rating"
-          min="1"
-          max="5"
-          placeholder="Rating (1-5)"
-          required
-        />
+
         <textarea name="comment" placeholder="Your review" required></textarea>
         <button type="submit">Submit Review</button>
       </form>
+      <div className={classes.starRating}>
+        {[...Array(5)].map((star, index) => {
+          const ratingValue = index + 1;
+
+          return (
+            <label key={index}>
+              <input
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setRating(ratingValue)}
+              />
+              <FaStar
+                className={classes.star}
+                color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                size={30}
+                onMouseEnter={() => setHover(ratingValue)}
+                onMouseLeave={() => setHover(0)}
+              />
+            </label>
+          );
+        })}
+      </div>
       <div className={classes.faqContainer}>
         {faqs.map((faq, index) => (
           <div key={index} className={classes.faqItem}>

@@ -1,0 +1,181 @@
+.proContainer {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(to right, #4caf50, #2e7d32);
+  color: white;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin: 0;
+  animation: fadeInUp 1s;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.serviceCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.card h3 {
+  margin: 15px 0;
+}
+
+.card p {
+  color: #666;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature {
+  background: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.feature img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.feature h3 {
+  margin: 15px 0;
+}
+
+.feature p {
+  color: #666;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.testimonials {
+  text-align: center;
+}
+
+.testimonial {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
+  max-width: 800px;
+  margin: 20px auto;
+  animation: fadeIn 2s;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 10px;
+  color: #4caf50;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  margin-top: 50px;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footerLinks a {
+  color: white;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}

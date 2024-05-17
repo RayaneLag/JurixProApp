@@ -22,15 +22,6 @@ const Aside = () => {
           {/* Ensure this container uses flex display */}
           <aside className="sidebar">
             <div className={classes.menu}>
-              {/* <div className={classes.Pic}>
-                <Flex gap="2">
-                  <Avatar
-                    src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-                    fallback="A"
-                  />
-                  <Avatar fallback="A" />
-                </Flex>
-              </div> */}
               <div onClick={() => handleClick("Home")} className="menu-item">
                 Home
               </div>
@@ -40,7 +31,12 @@ const Aside = () => {
               <div onClick={() => handleClick("planner")} className="menu-item">
                 Planner
               </div>
-              <div className="menu-item">settings</div>
+              <div
+                onClick={() => handleClick("Settings")}
+                className="menu-item"
+              >
+                settings
+              </div>
               <div
                 className="menu-item"
                 onClick={() =>

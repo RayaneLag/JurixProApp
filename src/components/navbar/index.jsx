@@ -45,11 +45,11 @@ const Nav = () => {
 
         {
           title: "Direction d'entreprise",
-          href: "/entreprise",
+          href: "/ProPage",
         },
         {
           title: "Etudiants en droit",
-          href: "/Etudiants",
+          href: "/StudPage",
         },
       ],
     },
@@ -95,13 +95,9 @@ const Nav = () => {
     <>
       <nav className={classes.nav}>
         <div className={classes.logoContainer}>
-          <img
-            src="/logo_jurixPro-removebg-preview.png"
-            alt="LOGO"
-            className={classes.logo}
-            onClick={() => Navigate("/")}
-          />
-          <p>JurixPro</p>
+          <p onClick={() => Navigate("/")} className={classes.logo}>
+            JurixPro
+          </p>
         </div>
         <div className={classes.navItems}>
           {NavItems.map((item, i) => {

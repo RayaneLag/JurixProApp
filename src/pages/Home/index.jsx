@@ -17,24 +17,21 @@ const HeroSection = () => {
             Découvrez comment simplifier vos processus légaux avec précision et
             efficacité"
           </p>
-          <button className={classes.freeTrialButton}>
-            Tester gratuitement
-          </button>
         </section>
       </div>
 
       <div className={classes.beta}>
         <Chatbot />
         <div className={classes.sigma}>
-          <h2>L’information complète et à jour</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-            dolor, voluptatem quae mollitia explicabo error! Magni ad quaerat
-            ipsam ipsa necessitatibus explicabo nesciunt,
-            <br /> praesentium modi maiores ullam, expedita iure deleniti neque
-            voluptates enim vel totam mollitia saepe, eligendi obcaecati quae
-            ab. Animi officia voluptate exercitationem voluptatum quo laborum
-            necessitatibus deserunt!
+          <h2 className={classes.sigmaTitle}>
+            L’information complète et à jour :
+          </h2>
+          <p className={classes.sigmaSubtitle}>
+            JurixPro est une legaltech innovante dédiée à transformer le paysage
+            juridique en Algérie. En combinant l'expertise juridique
+            traditionnelle avec les dernières avancées technologiques, JurixPro
+            offre des solutions intelligentes et efficaces pour les
+            professionnels du droit.
           </p>
         </div>
       </div>
@@ -87,6 +84,29 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
+      <section className={classes.section}>
+        <h2 className={classes.MyTeam}>Meet Our Team</h2>
+        <div className={classes.teamMember}>
+          <img
+            src="https://cdn.discordapp.com/attachments/1229742101009272833/1241093431833526272/RA.jpg?ex=6648f1d4&is=6647a054&hm=7b7c963f382fe73b3681a2a517a60a5556bca7b9278bba26b5e1b4f5797894b7&"
+            alt="Team Member"
+          />
+          <div className={classes.memberInfo}>
+            <h3>LAGGOUN RAYANE</h3>
+            <p>
+              Un jeune diplômé de la Faculté de Droit avec un Master 2 en Droit
+              Pénal et Sciences Criminelles. Il est également développeur
+              fullstack junior, passionné par la fusion de son expertise
+              juridique avec la technologie pour innover et améliorer le paysage
+              de la legaltech.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer className={classes.footer}>
+        <p>&copy; 2024 JurixPro. All Rights Reserved.</p>
+        <div className={classes.footerLinks}></div>
+      </footer>
     </>
   );
 };

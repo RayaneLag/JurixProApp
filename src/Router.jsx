@@ -10,9 +10,11 @@ import ContactPage from "./pages/Contacts";
 import Dashboard from "./pages/Dashbord";
 import Sidebar from "./components/SideBar";
 import ChatWeb from "./pages/Chatweb";
-
 import PlannerPage from "./pages/Calander";
 import CabinetAvocat from "./pages/AVOCATS";
+import SettingsPage from "./pages/Settings";
+import ProPage from "./pages/ProPage";
+import StudPage from "./pages/StudPage";
 
 function Router() {
   return (
@@ -26,11 +28,14 @@ function Router() {
           <Route path="avis" element={<Avis />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="Avocats" element={<CabinetAvocat />} />
+          <Route path="ProPage" element={<ProPage />} />
+          <Route path="StudPage" element={<StudPage />} />
         </Route>
         <Route path="/" element={<Sidebar />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="chatweb" element={<ChatWeb />} />
           <Route path="planner" element={<PlannerPage />} />
+          <Route path="Settings" element={<SettingsPage />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>
