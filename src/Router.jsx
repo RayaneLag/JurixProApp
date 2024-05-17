@@ -10,7 +10,9 @@ import ContactPage from "./pages/Contacts";
 import Dashboard from "./pages/Dashbord";
 import Sidebar from "./components/SideBar";
 import ChatWeb from "./pages/Chatweb";
-import Wrapper from "./pages/Calander";
+
+import PlannerPage from "./pages/Calander";
+import CabinetAvocat from "./pages/AVOCATS";
 
 function Router() {
   return (
@@ -23,11 +25,12 @@ function Router() {
           <Route path="signin" element={<SignIn />} />
           <Route path="avis" element={<Avis />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="Avocats" element={<CabinetAvocat />} />
         </Route>
         <Route path="/" element={<Sidebar />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="chatweb" element={<ChatWeb />} />
-          <Route path="wrapper" element={<Wrapper />} />
+          <Route path="planner" element={<PlannerPage />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

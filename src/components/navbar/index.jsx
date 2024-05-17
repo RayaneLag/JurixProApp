@@ -27,7 +27,7 @@ const Nav = () => {
 
         {
           title: "Jurix-Planner",
-          href: "/Wrapper",
+          href: "/planner",
         },
       ],
     },

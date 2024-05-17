@@ -35,10 +35,10 @@ const Aside = () => {
                 Home
               </div>
               <div onClick={() => handleClick("Chatweb")} className="menu-item">
-                Cases
+                Chatbot
               </div>
-              <div onClick={() => handleClick("Wrapper")} className="menu-item">
-                Clients
+              <div onClick={() => handleClick("planner")} className="menu-item">
+                Planner
               </div>
               <div className="menu-item">settings</div>
               <div

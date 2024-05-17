@@ -60,8 +60,8 @@ const HeroSection = () => {
               className={classes.testimonialPhoto}
             />
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Blanditiis praesentium consequuntur enim.
+              "Révolution Juridique : <br /> Les Tribunaux Algériens à l'Ère de
+              l'Intelligence Artificielle"
             </p>
           </div>
           <div className={classes.testimonial}>
@@ -71,8 +71,8 @@ const HeroSection = () => {
               className={classes.testimonialPhoto}
             />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-              optio dolorem ipsam.
+              "Avocat et Technologie : <br /> Une Collaboration Gagnante avec
+              JurixPro
             </p>
           </div>
           <div className={classes.testimonial}>
@@ -82,8 +82,7 @@ const HeroSection = () => {
               className={classes.testimonialPhoto}
             />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              architecto saepe quia?
+              Innovation et Tradition : <br /> L'IA dans les Cabinets Juridiques
             </p>
           </div>
         </div>

@@ -1,0 +1,137 @@
+/* avocat.module.css */
+
+.container {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.heroSection {
+  background: url("https://www.lapaixavocat.fr/public/img/big/AdobeStock177631799jpg_5ebd55a4b6573.jpg")
+    no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.heroTitle {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  animation: fadeInDown 2s ease-in-out;
+}
+
+.heroSubtitle {
+  font-size: 1.5em;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+  color: #fff;
+}
+
+.sectionDescription {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 0 auto 40px;
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.servicesSection {
+  background-color: #004085;
+  padding: 50px 20px;
+}
+
+.serviceCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.serviceCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+}
+
+.teamSection {
+  padding: 50px 20px;
+}
+
+.teamCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.teamCard {
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  animation: fadeInUp 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamPhoto {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.footerSection {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

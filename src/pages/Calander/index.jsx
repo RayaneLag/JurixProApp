@@ -1,55 +1,99 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "./calander.module.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { useState } from "react";
-import { Button, Drawer, Text } from "@medusajs/ui";
+import classes from "./calander.module.css";
 
 const localizer = momentLocalizer(moment);
-const Wrapper = () => {
-  const [events, setEvents] = useState([
-    {
-      start: moment().toDate(),
-      end: moment().add(1, "days").toDate(),
-      title: "Some title",
-    },
-  ]);
+
+const EventWrapper = ({ event, children }) => {
+  const start = moment(event.start);
+  const end = moment(event.end);
+  const today = moment(children.props.style.left);
+
+  if (start.isSame(today, "day")) {
+    return <div className={classes.eventStart}>{event.title}</div>;
+  }
+
+  if (end.isSame(today, "day")) {
+    return <div className={classes.eventEnd}>{event.title}</div>;
+  }
+
+  return <>{children}</>;
+};
+
+const PlannerPage = () => {
+  const [events, setEvents] = useState([]);
+  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
+
+  const handleAddEvent = (e) => {
+    e.preventDefault();
+    setEvents([
+      ...events,
+      {
+        ...newEvent,
+        start: new Date(newEvent.start),
+        end: new Date(newEvent.end),
+      },
+    ]);
+    setNewEvent({ title: "", start: "", end: "" });
+  };
 
   return (
-    <div>
-      <div className="App">
+    <div className={classes.container}>
+      <div className={classes.calendarContainer}>
         <Calendar
           localizer={localizer}
           defaultDate={new Date()}
           defaultView="month"
           events={events}
           style={{ height: "100vh" }}
+          components={{
+            eventWrapper: EventWrapper,
+          }}
         />
       </div>
-
-      <Button>Button</Button>
-      <Drawer>
-        <Drawer.Trigger asChild>
-          <Button>Edit Variant</Button>
-        </Drawer.Trigger>
-        <Drawer.Content className="contDrawer">
-          <Drawer.Header>
-            <Drawer.Title>Edit Variant</Drawer.Title>
-          </Drawer.Header>
-          <Drawer.Body className="p-4">
-            <Text>This is where you edit the variant&apos;s details</Text>
-          </Drawer.Body>
-          <Drawer.Footer>
-            <Drawer.Close asChild>
-              <Button variant="secondary">Cancel</Button>
-            </Drawer.Close>
-            <Button>Save</Button>
-          </Drawer.Footer>
-        </Drawer.Content>
-      </Drawer>
+      <div className={classes.formContainer}>
+        <form onSubmit={handleAddEvent}>
+          <h2>Add New Event</h2>
+          <div>
+            <label>Title</label>
+            <input
+              type="text"
+              value={newEvent.title}
+              onChange={(e) =>
+                setNewEvent({ ...newEvent, title: e.target.value })
+              }
+              required
+            />
+          </div>
+          <div>
+            <label>Start Date</label>
+            <input
+              type="datetime-local"
+              value={newEvent.start}
+              onChange={(e) =>
+                setNewEvent({ ...newEvent, start: e.target.value })
+              }
+              required
+            />
+          </div>
+          <div>
+            <label>End Date</label>
+            <input
+              type="datetime-local"
+              value={newEvent.end}
+              onChange={(e) =>
+                setNewEvent({ ...newEvent, end: e.target.value })
+              }
+              required
+            />
+          </div>
+          <button type="submit">Add Event</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Wrapper;
+export default PlannerPage;
