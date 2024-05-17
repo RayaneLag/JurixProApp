@@ -22,12 +22,12 @@ const Nav = () => {
       children: [
         {
           title: "Jurix-Chat",
-          href: "/ChatBot",
+          href: "/Chatweb",
         },
 
         {
           title: "Jurix-Planner",
-          href: "/Planner",
+          href: "/Wrapper",
         },
       ],
     },

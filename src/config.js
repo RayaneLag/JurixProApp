@@ -6,7 +6,7 @@ export const NavItems = [
     children: [
       {
         title: "Jurix-Chat",
-        href: "/ChatBot",
+        href: "/Chatweb",
       },
 
       {
