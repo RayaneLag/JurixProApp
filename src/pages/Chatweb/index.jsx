@@ -36,9 +36,11 @@ const ChatWeb = () => {
       console.log("Response from mutate:", res); // Log the full response
 
       // Check if response data is present
-      const responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text;
+      console.log("Response data:", res?.candidates?.[0]?.content?.parts);
+      const responseText =
+        res.data?.response?.candidates[0]?.content?.parts[0]?.text;
 
-      console.log("Extracted responseText:", responseText); // Log the extracted text
+      // Log the extracted text
 
       if (responseText) {
         // Add model response to the state
