@@ -92,10 +92,7 @@ const HeroSection = () => {
       <section className={classes.section}>
         <h2 className={classes.MyTeam}>Meet Our Team</h2>
         <div className={classes.teamMember}>
-          <img
-            src="https://cdn.discordapp.com/attachments/1229742101009272833/1241093431833526272/RA.jpg?ex=6648f1d4&is=6647a054&hm=7b7c963f382fe73b3681a2a517a60a5556bca7b9278bba26b5e1b4f5797894b7&"
-            alt="Team Member"
-          />
+          <img src="/RA.jpg" alt="Team Member" />
           <div className={classes.memberInfo}>
             <h3>LAGGOUN RAYANE</h3>
             <p>
