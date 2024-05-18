@@ -72,17 +72,17 @@ const SignIn = () => {
               Professional
             </Tabs.Trigger>
             <Tabs.Trigger className={classes.TabsTrigger} value="tab2">
-              Guest
+              Invite
             </Tabs.Trigger>
           </Tabs.List>
           <Tabs.Content className={classes.TabsContent} value="tab1">
             <p className={classes.Text}>
-              Make changes to your account here. Click save when you're done.
+              Se connecter en tant que professionel
             </p>
             <form onSubmit={handleSubmit}>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="name">
-                  Name
+                  Nom complet
                 </label>
                 <input
                   className={classes.Input}
@@ -106,7 +106,7 @@ const SignIn = () => {
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="password">
-                  Password
+                  Mot de passe
                 </label>
                 <input
                   className={classes.Input}
@@ -130,7 +130,7 @@ const SignIn = () => {
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="job">
-                  Job
+                  metier
                 </label>
                 <input
                   className={classes.Input}
@@ -152,7 +152,7 @@ const SignIn = () => {
                   type="submit"
                   disabled={isLoading}
                 >
-                  Save changes
+                  Se Connecter
                 </button>
               </div>
               {isError && (
@@ -163,13 +163,11 @@ const SignIn = () => {
             </form>
           </Tabs.Content>
           <Tabs.Content className={classes.TabsContent} value="tab2">
-            <p className={classes.Text}>
-              Change your password here. After saving, you'll be logged out.
-            </p>
+            <p className={classes.Text}>Se connecter en tant qu'invite</p>
             <form>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="name">
-                  Name
+                  Nom complet
                 </label>
                 <input className={classes.Input} id="name" />
               </fieldset>
@@ -181,7 +179,7 @@ const SignIn = () => {
               </fieldset>
               <fieldset className={classes.Fieldset}>
                 <label className={classes.Label} htmlFor="password">
-                  Password
+                  Mot de passe
                 </label>
                 <input
                   className={classes.Input}
@@ -206,7 +204,7 @@ const SignIn = () => {
                   className={`${classes.Button} ${classes.green}`}
                   type="submit"
                 >
-                  Change password
+                  Se Connecter
                 </button>
               </div>
             </form>
