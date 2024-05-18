@@ -23,6 +23,11 @@ const HeroSection = () => {
       <div className={classes.beta}>
         <Chatbot />
         <div className={classes.sigma}>
+          <img
+            src="/logo_jurixPro-removebg-preview.png"
+            alt="logo"
+            className={classes.logo}
+          />
           <h2 className={classes.sigmaTitle}>
             L’information complète et à jour :
           </h2>

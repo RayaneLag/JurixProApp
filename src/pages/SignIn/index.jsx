@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import classes from "./Sign.module.css";
-import { useSignInMutation } from "../../app/Slices/apislice";
+import { useSignUpMutation } from "../../app/Slices/apislice"; // Assurez-vous d'importer le bon hook
 import * as Tabs from "@radix-ui/react-tabs";
 import { TextGenerateEffect } from "../../components/TextGen";
 import { useDispatch } from "react-redux";
@@ -17,7 +16,7 @@ const SignIn = () => {
     job: "",
   });
   const [emailError, setEmailError] = useState("");
-  const [mutate, { isLoading, isError, error }] = useSignInMutation();
+  const [mutate, { isLoading, isError, error }] = useSignUpMutation(); // Utilisez le bon hook
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,9 +44,9 @@ const SignIn = () => {
       }).unwrap();
 
       console.log(response);
-      dispatch(login(response.newUser)); // Adjust based on actual response structure
+      dispatch(login(response.newUser));
 
-      navigate("/dashboard");
+      navigate("/dashbord");
     } catch (err) {
       console.error("Failed to sign in:", err);
     }

@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50vw;
 }
 
 form {
@@ -69,4 +69,12 @@ form button:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.formTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
 }

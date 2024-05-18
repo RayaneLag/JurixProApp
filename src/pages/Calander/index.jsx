@@ -55,9 +55,9 @@ const PlannerPage = () => {
       </div>
       <div className={classes.formContainer}>
         <form onSubmit={handleAddEvent}>
-          <h2>Add New Event</h2>
+          <h2 className={classes.formTitle}>Ajouter un nouvel evenement</h2>
           <div>
-            <label>Title</label>
+            <label>Titre</label>
             <input
               type="text"
               value={newEvent.title}
@@ -68,7 +68,7 @@ const PlannerPage = () => {
             />
           </div>
           <div>
-            <label>Start Date</label>
+            <label>Début</label>
             <input
               type="datetime-local"
               value={newEvent.start}
@@ -79,7 +79,7 @@ const PlannerPage = () => {
             />
           </div>
           <div>
-            <label>End Date</label>
+            <label>Fin</label>
             <input
               type="datetime-local"
               value={newEvent.end}
@@ -89,7 +89,7 @@ const PlannerPage = () => {
               required
             />
           </div>
-          <button type="submit">Add Event</button>
+          <button type="submit">Ajouter un nouvel evenement</button>
         </form>
       </div>
     </div>
