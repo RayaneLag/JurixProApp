@@ -77,28 +77,34 @@
   gap: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .nav {
-    padding: 5px 20px;
-  }
-
-  .navItems {
-    display: none;
-  }
-
-  .logoContainer {
-    display: none;
-  }
-
-  .button {
-    display: none;
+    flex-direction: column;
+    padding: 10px 20px;
+    height: auto;
   }
 
   .alpha {
-    display: none;
+    gap: 5px;
+  }
+
+  .navItems {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav a {
+    font-size: medium;
+  }
+
+  .button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .logo {
-    display: none;
+    font-size: large;
   }
 }

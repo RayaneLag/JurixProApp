@@ -183,35 +183,49 @@
   color: white;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 480px) {
   .hero {
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    padding: 20px;
   }
-  .backgroundImage {
-    display: none;
-  }
+
   .beta {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
+
+  .sigma {
+    width: 100%;
+    padding: 20px;
+  }
+
   .title {
     font-size: 2rem;
   }
+
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+
   .freeTrialButton {
-    font-size: 0.8rem;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
   }
 
   .testimonialsContainer {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .testimonialPhoto {
+    width: 90%;
+    height: auto;
   }
 
   .teamMember {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
@@ -222,14 +236,5 @@
 
   .memberInfo {
     max-width: 100%;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .footer {
-    font-size: 0.8rem;
   }
 }

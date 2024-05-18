@@ -30,23 +30,44 @@ const ChatWeb = () => {
     // Send message to the model
     try {
       const res = await mutate({
-        input: [{ role: "user", parts: [{ text: newMessage }] }],
+        input: newMessage,
       });
 
-      // Add model response to the state
+      console.log("Response from mutate:", res); // Log the full response
+
+      // Check if response data is present
+      const responseText = res?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+      console.log("Extracted responseText:", responseText); // Log the extracted text
+
+      if (responseText) {
+        // Add model response to the state
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          {
+            role: "model",
+            parts: [{ text: responseText }],
+          },
+        ]);
+      } else {
+        console.error("No response text found in the response", res);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          {
+            role: "model",
+            parts: [{ text: "No response text" }],
+          },
+        ]);
+      }
+    } catch (error) {
+      console.error("Error sending message to the model:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
         {
           role: "model",
-          parts: [
-            {
-              text: res.data?.response?.candidates[0]?.content?.parts[0]?.text,
-            },
-          ],
+          parts: [{ text: "An error occurred while processing your request." }],
         },
       ]);
-    } catch (error) {
-      console.error("Error sending message to the model:", error);
     }
   };
 
@@ -121,31 +142,36 @@ export default ChatWeb;
 //     if (!text && userInput.trim() === "") return;
 //     const newMessage = text || userInput;
 
-//     setMessages([...messages, { role: "user", parts: [{ text: newMessage }] }]);
+//     // Add user message to the state
+//     setMessages((prevMessages) => [
+//       ...prevMessages,
+//       { role: "user", parts: [{ text: newMessage }] },
+//     ]);
 //     setUserInput("");
 //     setShowSuggestions(false);
 
+//     // Send message to the model
+//     try {
+//       const res = await mutate({
+//         input: [{ role: "user", parts: [{ text: newMessage }] }],
+//       });
+
+//       // Add model response to the state
+//       setMessages((prevMessages) => [
+//         ...prevMessages,
+//         {
+//           role: "model",
+//           parts: [
+//             {
+//               text: res.data?.response?.candidates[0]?.content?.parts[0]?.text,
+//             },
+//           ],
+//         },
+//       ]);
+//     } catch (error) {
+//       console.error("Error sending message to the model:", error);
+//     }
 //   };
-//   const handlesendmessagetoGEMINI = async() => {
-//     const res = await mutate({
-//       input: [{ role: "user", parts: [{ text: userInput }] }],
-//     });
-
-//     setMessages([
-//       ...messages,
-
-//       {
-//         role: "model",
-//         parts: [
-//           {
-//             text: res.data?.response?.candidates[0].content.parts[0].text,
-//           },
-//         ],
-//       },
-//       ,
-//     ]);
-//   }
-//   console.log("messagesssss",messages)
 
 //   const handleSuggestionClick = (suggestion) => {
 //     handleSendMessage(suggestion);
@@ -155,14 +181,16 @@ export default ChatWeb;
 //     <>
 //       <div className="chatweb-container">
 //         <div className="chatweb-body">
-//           {messages.map((msg, index) => {
-//             if (!msg) return;
-//             return (
-//               <div key={index} className={`chatweb-message ${msg.role}`}>
-//                 {msg?.parts[0]?.text}
-//               </div>
-//             );
-//           })}
+//           {messages.map(
+//             (msg, index) =>
+//               msg &&
+//               msg.role &&
+//               msg.parts && (
+//                 <div key={index} className={`chatweb-message ${msg.role}`}>
+//                   {msg.parts[0]?.text}
+//                 </div>
+//               )
+//           )}
 
 //           {showSuggestions && (
 //             <div className="chatweb-suggestions">
@@ -186,14 +214,7 @@ export default ChatWeb;
 //             placeholder="Posez votre question ici..."
 //             onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
 //           />
-//           <button
-//             onClick={() => {
-//               handleSendMessage();
-//               handlesendmessagetoGEMINI()
-//             }}
-//           >
-//             Envoyer
-//           </button>
+//           <button onClick={() => handleSendMessage()}>Envoyer</button>
 //         </div>
 //       </div>
 //     </>
