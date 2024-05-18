@@ -19,7 +19,6 @@ const FonctionnalitePage = () => {
             alt="Automatisation des Documents"
           />
           <h3>
-            {" "}
             <strong> Automatisation des Documents </strong>
           </h3>
           <p>

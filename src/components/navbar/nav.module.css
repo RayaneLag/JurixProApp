@@ -76,3 +76,29 @@
   align-items: center;
   gap: 30px;
 }
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 5px 20px;
+  }
+
+  .navItems {
+    display: none;
+  }
+
+  .logoContainer {
+    display: none;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .alpha {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}

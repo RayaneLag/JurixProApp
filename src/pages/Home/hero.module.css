@@ -191,4 +191,45 @@
   .backgroundImage {
     display: none;
   }
+  .beta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .freeTrialButton {
+    font-size: 0.8rem;
+  }
+
+  .testimonialsContainer {
+    flex-direction: column;
+  }
+
+  .teamMember {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .teamMember img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .memberInfo {
+    max-width: 100%;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
 }

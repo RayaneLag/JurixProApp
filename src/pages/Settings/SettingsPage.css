@@ -96,3 +96,65 @@ button[type="submit"]:hover {
   height: 100vh;
   width: 85vw;
 }
+
+@media screen and (max-width: 768px) {
+  .settings-page-container {
+    width: 100vw;
+  }
+
+  .settings-container {
+    flex-direction: column;
+  }
+
+  .settings-section {
+    padding: 10px;
+  }
+
+  .settings-section h2 {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+
+  .settings-page {
+    padding: 10px;
+  }
+
+  .settings-page h1 {
+    font-size: 1.5em;
+  }
+
+  .settings-section {
+    padding: 10px;
+  }
+
+  .settings-section h2 {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}

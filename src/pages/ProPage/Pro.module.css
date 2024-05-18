@@ -179,3 +179,132 @@
   margin-bottom: 0.5rem;
   color: black;
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .feature {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+  }
+
+  .footerLinks a {
+    margin-bottom: 10px;
+  }
+
+  .footerLinks a:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUpAndFade {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideRightAndFade {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideDownAndFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideLeftAndFade {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+}

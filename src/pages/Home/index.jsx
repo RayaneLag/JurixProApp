@@ -2,7 +2,6 @@ import React from "react";
 import { FaRegComments, FaRegCalendarCheck } from "react-icons/fa";
 import classes from "./hero.module.css";
 import { Chatbot } from "../../components/chatbot";
-import { Sigma } from "lucide-react";
 
 const HeroSection = () => {
   return (

@@ -149,3 +149,59 @@
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 2em;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2em;
+  }
+
+  .sectionTitle {
+    font-size: 2em;
+  }
+
+  .sectionDescription {
+    font-size: 1em;
+  }
+
+  .serviceCard {
+    width: 100%;
+  }
+
+  .teamCard {
+    width: 100%;
+  }
+
+  .logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutSection {
+    padding: 20px;
+  }
+
+  .aboutSection p {
+    font-size: 1em;
+  }
+
+  .aboutSection img {
+    width: 100%;
+  }
+
+  .teamPhoto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footerSection {
+    padding: 10px;
+  }
+
+  .footerSection p {
+    font-size: 0.8em;
+  }
+}

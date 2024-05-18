@@ -148,6 +148,94 @@ h2 {
     padding: 0.5rem;
     max-width: 100%;
   }
+
+  .review p {
+    font-size: 12px;
+  }
+
+  .reviewForm input,
+  .reviewForm textarea,
+  .reviewForm button {
+    padding: 0.5rem;
+  }
+
+  .starRating {
+    gap: 5px;
+  }
+
+  .star {
+    font-size: 14px;
+  }
+
+  .faqQuestion {
+    font-size: 14px;
+  }
+
+  .faqAnswerOpen,
+  .faqAnswerClosed {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+
+  .avisTitle {
+    font-size: 20px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .TextGen {
+    width: 100%;
+  }
+
+  .homeSection {
+    flex-direction: column;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .formTitle {
+    font-size: 20px;
+  }
+
+  .eventStart,
+  .eventEnd {
+    font-size: 14px;
+  }
+
+  form button {
+    font-size: 14px;
+  }
+
+  form input {
+    font-size: 14px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form select {
+    font-size: 14px;
+  }
+
+  form div {
+    font-size: 14px;
+  }
+
+  form textarea {
+    font-size: 14px;
+  }
+
+  form button {
+    font-size: 14px;
+  }
 }
 
 .footer {

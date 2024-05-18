@@ -78,3 +78,89 @@ form button:hover {
   width: 100%;
   max-width: 400px;
 }
+@media screen and (max-width: 768px) {
+  .formContainer {
+    border-left: none;
+    border-top: 2px solid #eaeaea;
+    padding: 20px;
+    width: 100vw;
+  }
+
+  .formTitle {
+    font-size: 1.2rem;
+  }
+
+  .eventStart,
+  .eventEnd {
+    font-size: 0.8rem;
+  }
+
+  form button {
+    font-size: 0.8rem;
+  }
+
+  form input {
+    font-size: 0.8rem;
+  }
+
+  form label {
+    font-size: 0.8rem;
+  }
+
+  form div {
+    margin-bottom: 5px;
+  }
+
+  .calendarContainer {
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .formContainer {
+    margin-top: 20px;
+  }
+
+  .formTitle {
+    margin-bottom: 10px;
+  }
+
+  .eventStart,
+  .eventEnd {
+    padding: 1px;
+  }
+
+  form button {
+    padding: 5px;
+  }
+
+  form input {
+    padding: 5px;
+  }
+
+  form label {
+    margin-bottom: 2px;
+  }
+
+  form div {
+    margin-bottom: 2px;
+  }
+
+  .calendarContainer {
+    padding: 5px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .formContainer {
+    margin-top: 10px;
+  }
+
+  .formTitle {
+    margin-bottom: 5px;
+  }
+}

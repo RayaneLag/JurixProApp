@@ -75,3 +75,34 @@
   background-color: #333;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .contactDetails {
+    margin-top: 20px;
+  }
+
+  .additionalSection {
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+
+  .contactForm {
+    margin-top: 20px;
+  }
+
+  .contactForm button {
+    width: 100%;
+  }
+
+  .contactForm input,
+  .contactForm textarea {
+    width: 100%;
+  }
+}
