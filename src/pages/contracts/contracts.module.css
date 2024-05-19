@@ -1,0 +1,114 @@
+.contractsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  width: 80vw;
+}
+
+.contractsContainer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.summaryContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.myH3 {
+  font-size: large;
+  font-weight: bold;
+}
+
+.myH2 {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.summaryItem {
+  text-align: center;
+}
+
+.summaryItem h3 {
+  margin-bottom: 10px;
+}
+
+.chartContainer {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.chartWrapper {
+  height: 300px;
+}
+
+.contractListContainer {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.contractItem {
+  margin-bottom: 10px;
+}
+
+.contractItem h3 {
+  margin-bottom: 5px;
+}
+
+.contractDetailsContainer {
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.detailsItem {
+  margin-bottom: 10px;
+}
+
+.detailsItem h3 {
+  margin-bottom: 5px;
+}
+
+.contractAnimationContainer {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.animation {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100px;
+}
+
+.bar {
+  width: 20px;
+  background-color: #4caf50;
+  animation: grow 1.5s ease-in-out infinite;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}

@@ -16,6 +16,9 @@ import SettingsPage from "./pages/Settings";
 import ProPage from "./pages/ProPage";
 import StudPage from "./pages/StudPage";
 import FonctionnalitePage from "./pages/Fonctionnalités";
+import Stats from "./pages/stats";
+import Contracts from "./pages/contracts";
+import Clients from "./pages/clients";
 
 function Router() {
   return (
@@ -38,6 +41,9 @@ function Router() {
           <Route path="chatweb" element={<ChatWeb />} />
           <Route path="planner" element={<PlannerPage />} />
           <Route path="Settings" element={<SettingsPage />} />
+          <Route path="Stats" element={<Stats />} />
+          <Route path="Contracts" element={<Contracts />} />
+          <Route path="Clients" element={<Clients />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

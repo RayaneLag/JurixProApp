@@ -61,7 +61,7 @@ const HeroSection = () => {
               className={classes.testimonialPhoto}
             />
             <p>
-              "Révolution Juridique : <br /> Les Tribunaux Algériens à l'Ère de
+              Révolution Juridique : <br /> Les Tribunaux Algériens à l'Ère de
               l'Intelligence Artificielle"
             </p>
           </div>
@@ -72,7 +72,7 @@ const HeroSection = () => {
               className={classes.testimonialPhoto}
             />
             <p>
-              "Avocat et Technologie : <br /> Une Collaboration Gagnante avec
+              Avocat et Technologie : <br /> Une Collaboration Gagnante avec
               JurixPro
             </p>
           </div>
