@@ -38,8 +38,8 @@ const Dashbord = () => {
             <div className="stat-card">
               <FaFileContract className="stat-icon" />
               <div onClick={() => handleClick("contracts")}>
-                <h3>Contrats</h3>
-                <p>Gérez vos contrats facilement et efficacement.</p>
+                <h3>Requete d'instance</h3>
+                <p>Gérez vos requêtes facilement et efficacement.</p>
               </div>
             </div>
             <div className="stat-card">
