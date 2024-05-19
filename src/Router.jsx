@@ -19,6 +19,7 @@ import FonctionnalitePage from "./pages/Fonctionnalités";
 import Stats from "./pages/stats";
 import Contracts from "./pages/contracts";
 import Clients from "./pages/clients";
+import Planning from "./pages/Planning";
 
 function Router() {
   return (
@@ -44,6 +45,7 @@ function Router() {
           <Route path="Stats" element={<Stats />} />
           <Route path="Contracts" element={<Contracts />} />
           <Route path="Clients" element={<Clients />} />
+          <Route path="Planning" element={<Planning />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

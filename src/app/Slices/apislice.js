@@ -53,19 +53,6 @@ export const apiSlice = createApi({
         body: data,
       }),
     }),
-    updateClient: builder.mutation({
-      query: ({ id, data }) => ({
-        url: `clients/${id}`,
-        method: "put",
-        body: data,
-      }),
-    }),
-    deleteClient: builder.mutation({
-      query: (id) => ({
-        url: `clients/${id}`,
-        method: "delete",
-      }),
-    }),
   }),
 });
 
@@ -77,8 +64,6 @@ export const {
   useUpdatePasswordMutation,
   useFetchClientsQuery,
   useAddClientMutation,
-  useUpdateClientMutation,
-  useDeleteClientMutation,
 } = apiSlice;
 
 export default apiSlice;

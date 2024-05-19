@@ -9,6 +9,8 @@ import {
   FaCalendarAlt,
   FaCog,
   FaSignOutAlt,
+  FaAngular,
+  FaAddressBook,
 } from "react-icons/fa";
 
 const Aside = () => {
@@ -25,6 +27,12 @@ const Aside = () => {
         <div className={classes.menu}>
           <div onClick={() => handleClick("Home")} className={classes.menuItem}>
             <FaHome className={classes.menuItemIcon} /> Home
+          </div>
+          <div
+            onClick={() => handleClick("Dashbord")}
+            className={classes.menuItem}
+          >
+            <FaAddressBook className={classes.menuItemIcon} /> Dashbord
           </div>
           <div
             onClick={() => handleClick("Chatweb")}
