@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Sign.module.css";
-import { useSignUpMutation } from "../../app/Slices/apislice"; // Assurez-vous d'importer le bon hook
+import { useSignUpMutation } from "../../app/Slices/apislice";
 import * as Tabs from "@radix-ui/react-tabs";
 import { TextGenerateEffect } from "../../components/TextGen";
 import { useDispatch } from "react-redux";
@@ -16,7 +16,7 @@ const SignIn = () => {
     job: "",
   });
   const [emailError, setEmailError] = useState("");
-  const [mutate, { isLoading, isError, error }] = useSignUpMutation(); // Utilisez le bon hook
+  const [mutate, { isLoading, isError, error }] = useSignUpMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -60,7 +60,13 @@ const SignIn = () => {
           alt="Logo"
           className={classes.logo}
         />
-        <TextGenerateEffect />
+        <p className={classes.TextmyP}>
+          <strong>
+            Accédez à la puissance juridique simplifiée. Connectez-vous pour
+            découvrir des solutions innovantes, rapides et adaptées à vos
+            besoins
+          </strong>
+        </p>
       </div>
       <div className={classes.illustration}>
         <Tabs.Root className={classes.TabsRoot} defaultValue="tab1">
